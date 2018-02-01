@@ -196,7 +196,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'LtoX6Ul3p3Yyl7qaRVD-_mgJLEPRN7ie', '$2y$13$CLN1wFKbt0myOGKx7oOch.3j2sxgb9U4I7xaqGKdg7XQTBVEhXscm', NULL, 'admin@test.do', 10, 1516655125, 1516655125);
+(1, 'admin', 'LtoX6Ul3p3Yyl7qaRVD-_mgJLEPRN7ie', '$2y$13$BT/MsdoVKE81S0.cxza/3.k2P2DrQ2wuwVeZ.ePvttXufrZ17ynmu', NULL, 'admin@test.do', 10, 1516655125, 1516655125);
 
 --
 -- Индексы сохранённых таблиц

@@ -5,6 +5,10 @@ namespace backend\widgets;
 use common\helpers\TreeHelper;
 use yii\helpers\ArrayHelper;
 
+/**
+ * Class TreeGridView
+ * @package backend\widgets
+ */
 class TreeGridView extends \yii\grid\GridView
 {
 

@@ -9,6 +9,10 @@ use common\models\Product;
 use Yii;
 use yii\web\Controller;
 
+/**
+ * Class SiteController
+ * @package frontend\controllers
+ */
 class SiteController extends Controller
 {
 

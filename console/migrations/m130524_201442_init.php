@@ -13,16 +13,25 @@ class m130524_201442_init extends Migration
 
         $this->createTable('{{%user}}', [
             'id' => $this->primaryKey(),
-            'username' => $this->string()->notNull()->unique(),
+            'username' => $this->string(191)->notNull()->unique(),
             'auth_key' => $this->string(32)->notNull(),
             'password_hash' => $this->string()->notNull(),
-            'password_reset_token' => $this->string()->unique(),
-            'email' => $this->string()->notNull()->unique(),
+            'password_reset_token' => $this->string(191)->unique(),
+            'email' => $this->string(191)->notNull()->unique(),
 
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
+
+        $this->insert('{{%user}}', [
+            'username' => 'admin',
+            'password_hash' => Yii::$app->security->generatePasswordHash('admin'),
+            'email' => 'admin@admin.do',
+            'status' => '10',
+            'created_at' => time(),
+            'updated_at' => time(),
+        ]);
     }
 
     public function safeDown()

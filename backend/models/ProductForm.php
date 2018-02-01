@@ -7,11 +7,18 @@ use common\models\Attribute2product;
 use Yii;
 use yii\base\Model;
 
+/**
+ * Class ProductForm
+ * @package app\models
+ */
 class ProductForm extends Model
 {
     public $product;
     public $properties;
 
+    /**
+     * @return array
+     */
     public function getPropertiesForm()
     {
         $this->properties = [];
@@ -34,6 +41,10 @@ class ProductForm extends Model
         return $this->properties;
     }
 
+    /**
+     * @param $data
+     * @return mixed
+     */
     public function setData($data)
     {
         $productLoad = $this->product->load($data);
@@ -45,6 +56,10 @@ class ProductForm extends Model
         return $productLoad;
     }
 
+    /**
+     * @return bool
+     * @throws \yii\db\Exception
+     */
     public function save()
     {
         $transaction = Yii::$app->db->beginTransaction();
@@ -61,6 +76,11 @@ class ProductForm extends Model
         return true;
     }
 
+    /**
+     * @return bool
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
+     */
     public function saveProperties()
     {
         foreach ($this->properties as $key => $item) {
